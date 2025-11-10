@@ -35,6 +35,8 @@ public abstract class Conta {
         this.titular = titular;
     }
 
-    // na classe abstrara usar apenas os metodos comuns para TODAS as contas
-    // depositar e sacar
+    // métodos abstratos que todo TIPO de conta que herda de Conta deve ter
+    // implementado
+    // O polimorfismo só faz sentido onde existe herança
+    public abstract void atualizarSaldo();
 }
