@@ -6,6 +6,7 @@ import BancoDigital.concretas.Banco;
 import BancoDigital.concretas.tiposContas.ContaCorrente;
 import BancoDigital.concretas.tiposContas.ContaInvestimento;
 import BancoDigital.concretas.tiposContas.ContaPoupanca;
+import BancoDigital.interfaces.Rendimento;
 
 public class Programa {
     public static void main(String[] args) {
@@ -45,9 +46,11 @@ public class Programa {
         // criar conta
         Conta c1 = new ContaCorrente(1, 15.00, "A");
         Conta c2 = new ContaPoupanca(2, 25.00, "B");
+        Conta c3 = new ContaInvestimento(1, 0.00, "I1");
 
         agencia1.addConta(c1);
         agencia2.addConta(c2);
+        agencia2.addConta(c3);
 
         // saldo atual da conta
         c1.atualizarSaldo();
@@ -60,16 +63,31 @@ public class Programa {
         c1.atualizarSaldo();
         c2.atualizarSaldo();
 
-        // calculando simulacao rendimento - polimorfismo via interface
-        double res = c2.calcularRendimento(1000.00, 3);
-        System.out.println("Rendimento da poupança: " + res);
-        System.out.println("-----------------------------------------------");
+        // listar lista Contas
 
-        // criar conta
-        Conta c3 = new ContaInvestimento(1, 0.00, "I1");
+        /*
+         * Tipo da variável: Conta
+         * Tipo real do objeto: ContaPoupanca
+         * Interface implementada: Rendimento
+         * O instanceof olha para o tipo real do objeto (ContaPoupanca), não para a
+         * variável (Conta).
+         * c2 instanceof Conta → true, porque ContaPoupanca herda de Conta.
+         * c2 instanceof ContaPoupanca → true, porque é exatamente esse tipo.
+         * c2 instanceof Rendimento → true, porque ContaPoupanca implementa a interface
+         * Rendimento.
+         */
 
-        double res2 = c3.calcularRendimento(1000.00, 3);
-        System.out.printf("Rendimento do investimento: %.2f", res2);
+        if (c2 instanceof Rendimento || c3 instanceof Rendimento) {
+            Rendimento r = (Rendimento) c2; // cast - converto = r e c2 apontam para o mesmo objeto na memória.
+            Rendimento r1 = (Rendimento) c3;
+
+            double res = r.calcularRendimento(1000.00, 3);
+            System.out.println("Rendimento da poupança: " + res);
+            System.out.println("-----------------------------------------------");
+
+            double res2 = r1.calcularRendimento(1000.00, 3);
+            System.out.printf("Rendimento do investimento: %.2f", res2);
+        }
 
         /*
          * LINKEDLIST
