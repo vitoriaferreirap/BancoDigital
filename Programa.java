@@ -48,6 +48,9 @@ public class Programa {
         agencia1.addConta(c1);
         agencia2.addConta(c2);
 
+        // deposito
+        c1.deposito(20.00);
+
         /*
          * LINKEDLIST
          * ==========

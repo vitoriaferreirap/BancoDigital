@@ -7,22 +7,22 @@ package BancoDigital.abstratas;
 // aplicando conceito de abstração - conta individual
 public abstract class Conta {
     // define o que todas as contas têm em comum.
-    private int numero;
+    private int numeroConta;
     private double saldo;
     private String titular;
 
-    public Conta(int numero, double saldo, String titular) {
-        this.numero = numero;
+    public Conta(int numeroConta, double saldo, String titular) {
+        this.numeroConta = numeroConta;
         this.saldo = saldo;
         this.titular = titular;
     }
 
-    public int getNumero() {
-        return numero;
+    public int getNumeroConta() {
+        return numeroConta;
     }
 
-    public void setNumero(int numero) {
-        this.numero = numero;
+    public void setNumeroConta(int numeroConta) {
+        this.numeroConta = numeroConta;
     }
 
     public double getSaldo() {
@@ -45,4 +45,10 @@ public abstract class Conta {
     // implementado
     // O polimorfismo só faz sentido onde existe herança
     public abstract void atualizarSaldo();
+
+    // metodo concreto pois, filhos teram o mesmo comportamento
+    public void deposito(double d) {
+        setSaldo(getSaldo() + d);
+        System.out.println("O saldo da conta : " + getNumeroConta() + " é " + getSaldo());
+    }
 }
