@@ -4,6 +4,7 @@ import BancoDigital.abstratas.Conta;
 import BancoDigital.concretas.AgenciaBancaria;
 import BancoDigital.concretas.Banco;
 import BancoDigital.concretas.tiposContas.ContaCorrente;
+import BancoDigital.concretas.tiposContas.ContaInvestimento;
 import BancoDigital.concretas.tiposContas.ContaPoupanca;
 
 public class Programa {
@@ -62,6 +63,13 @@ public class Programa {
         // calculando simulacao rendimento - polimorfismo via interface
         double res = c2.calcularRendimento(1000.00, 3);
         System.out.println("Rendimento da poupança: " + res);
+        System.out.println("-----------------------------------------------");
+
+        // criar conta
+        Conta c3 = new ContaInvestimento(1, 0.00, "I1");
+
+        double res2 = c3.calcularRendimento(1000.00, 3);
+        System.out.printf("Rendimento do investimento: %.2f", res2);
 
         /*
          * LINKEDLIST
