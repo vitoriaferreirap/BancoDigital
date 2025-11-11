@@ -14,8 +14,7 @@ public class ContaPoupanca extends Conta {
     // aplicando o conceito de polimorfismo
     @Override
     public void atualizarSaldo() {
-        // aplicar juros
-        setSaldo(getSaldo() * 1.00);
+        System.out.println("Saldo conta poupanca: " + getSaldo());
     }
 
 }

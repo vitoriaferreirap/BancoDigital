@@ -48,8 +48,16 @@ public class Programa {
         agencia1.addConta(c1);
         agencia2.addConta(c2);
 
+        // saldo atual da conta
+        c1.atualizarSaldo();
+        c2.atualizarSaldo();
+
         // deposito
         c1.deposito(20.00);
+        c2.deposito(100.00);
+
+        c1.atualizarSaldo();
+        c2.atualizarSaldo();
 
         /*
          * LINKEDLIST

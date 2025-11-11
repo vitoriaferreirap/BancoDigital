@@ -49,6 +49,12 @@ public abstract class Conta {
     // metodo concreto pois, filhos teram o mesmo comportamento
     public void deposito(double d) {
         setSaldo(getSaldo() + d);
-        System.out.println("O saldo da conta : " + getNumeroConta() + " é " + getSaldo());
+        System.out.println("O saldo da conta: " + getNumeroConta() + " apos deposito é " + getSaldo());
+    }
+
+    public void sacar(double s) {
+        setSaldo(getSaldo() - s);
+        System.out.println("O saldo da conta: " + getNumeroConta() + " apos saque é " + getSaldo());
+
     }
 }

@@ -13,7 +13,6 @@ public class ContaCorrente extends Conta {
     // aplicando o conceito de polimorfismo
     @Override
     public void atualizarSaldo() {
-        // aplicar juros
-        setSaldo(getSaldo() - 10);
+        System.out.println("Saldo conta corrente: " + getSaldo());
     }
 }
