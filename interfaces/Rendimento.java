@@ -1,5 +1,5 @@
 package BancoDigital.interfaces;
 
-public interface Rendiento {
+public interface Rendimento {
 
 }
