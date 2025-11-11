@@ -1,4 +1,4 @@
-package BancoDigital;
+package BancoDigital.concretas;
 
 import java.util.ArrayList;
 import java.util.List;

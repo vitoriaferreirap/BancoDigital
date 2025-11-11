@@ -1,4 +1,6 @@
-package BancoDigital;
+package BancoDigital.concretas;
+
+import BancoDigital.abstratas.Conta;
 
 // aplicando conceito de herança
 public class ContaPoupanca extends Conta {
