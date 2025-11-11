@@ -1,27 +1,33 @@
 package BancoDigital;
 
 import java.util.ArrayList;
+import java.util.List;
 
 //conta tem varias agencias
 public class Banco {
-    private int numero;
+    private int numeroBanco;
 
-    // colecao de agencias bancarias
-    private ArrayList<AgenciaBancaria> agencia = new ArrayList<>();
+    // colecao de agencias bancarias - 1 banco varias agencias
+    private List<AgenciaBancaria> agencia = new ArrayList<>();
 
-    public Banco() {
-
+    public Banco(int numeroBanco) {
+        this.numeroBanco = numeroBanco;
     }
 
-    public int getNumero() {
-        return numero;
+    public int getNumeroBanco() {
+        return numeroBanco;
     }
 
-    public void setNumero(int numero) {
-        this.numero = numero;
+    public void setNumeroBanco(int numeroBanco) {
+        this.numeroBanco = numeroBanco;
     }
 
-    public void addAgencia() {
+    public List<AgenciaBancaria> getAgencia() {
+        return agencia;
+    }
+
+    public void addAgencia(AgenciaBancaria a) {
+        agencia.add(a);
 
     }
 
@@ -29,6 +35,10 @@ public class Banco {
     }
 
     public void listarAgencia() {
+        System.out.println("Banco: " + getNumeroBanco());
+        for (AgenciaBancaria a : agencia) {
+            System.out.println("AGENCIAS: " + a.getNome());
+        }
     }
 
     // O Banco faz isso olhando para suas agências, e somando os resultados delas.

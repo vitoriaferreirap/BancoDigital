@@ -1,6 +1,7 @@
 package BancoDigital;
 
 import java.util.ArrayList;
+import java.util.List;
 
 //agencia te varias contas
 public class AgenciaBancaria {
@@ -9,11 +10,12 @@ public class AgenciaBancaria {
     private String nome;
 
     // colecao de contas - lista vai arazenar varios obj do tipo conta
-    private ArrayList<Conta> contas = new ArrayList<>();
+    private List<Conta> contas = new ArrayList<>();
 
     // construtor padrao
-    public AgenciaBancaria() {
-
+    public AgenciaBancaria(int numero, String nome) {
+        this.numero = numero;
+        this.nome = nome;
     }
 
     // contrutor com args
@@ -35,8 +37,13 @@ public class AgenciaBancaria {
         this.nome = nome;
     }
 
+    public List<Conta> getContas() {
+        return contas;
+    }
+
     // metodos que manipula o arraylist das contas
-    public void addConta() {
+    public void addConta(Conta c) {
+        contas.add(c);
 
     }
 
@@ -49,7 +56,9 @@ public class AgenciaBancaria {
     }
 
     public void listarContas() {
-
+        for (Conta c : contas) {
+            System.out.println("CONTAS: " + c.getTitular());
+        }
     }
 
     // classe AgenciaBancaria e Banco usam esses metodos

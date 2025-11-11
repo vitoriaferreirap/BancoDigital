@@ -11,6 +11,12 @@ public abstract class Conta {
     private double saldo;
     private String titular;
 
+    public Conta(int numero, double saldo, String titular) {
+        this.numero = numero;
+        this.saldo = saldo;
+        this.titular = titular;
+    }
+
     public int getNumero() {
         return numero;
     }
@@ -27,7 +33,7 @@ public abstract class Conta {
         this.saldo = saldo;
     }
 
-    public String getTutular() {
+    public String getTitular() {
         return titular;
     }
 
