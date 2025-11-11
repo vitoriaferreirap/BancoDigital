@@ -1,4 +1,4 @@
-package BancoDigital.concretas;
+package BancoDigital.concretas.tiposContas;
 
 import BancoDigital.abstratas.Conta;
 

@@ -3,8 +3,8 @@ package BancoDigital;
 import BancoDigital.abstratas.Conta;
 import BancoDigital.concretas.AgenciaBancaria;
 import BancoDigital.concretas.Banco;
-import BancoDigital.concretas.ContaCorrente;
-import BancoDigital.concretas.ContaPoupanca;
+import BancoDigital.concretas.tiposContas.ContaCorrente;
+import BancoDigital.concretas.tiposContas.ContaPoupanca;
 
 public class Programa {
     public static void main(String[] args) {
@@ -58,6 +58,10 @@ public class Programa {
 
         c1.atualizarSaldo();
         c2.atualizarSaldo();
+
+        // calculando simulacao rendimento - polimorfismo via interface
+        double res = c2.calcularRendimento(1000.00, 3);
+        System.out.println("Rendimento da poupança: " + res);
 
         /*
          * LINKEDLIST

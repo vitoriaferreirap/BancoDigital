@@ -1,11 +1,13 @@
 package BancoDigital.abstratas;
 //Nao é ua lista, classe é um TIPO de obj que vai ser guardado dentro da lista (cada obj tera tudo que ela tera aqui)
 
+import BancoDigital.interfaces.Rendimento;
+
 //Em POO, quando algo é muito genérico e não faz sentido existir sozinho, ele vira uma classe abstrata.
 // pode ser polpança/corrente ou outra
 
 // aplicando conceito de abstração - conta individual
-public abstract class Conta {
+public abstract class Conta implements Rendimento {
     // define o que todas as contas têm em comum.
     private int numeroConta;
     private double saldo;

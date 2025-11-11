@@ -1,9 +1,10 @@
-package BancoDigital.concretas;
+package BancoDigital.concretas.tiposContas;
 
 import BancoDigital.abstratas.Conta;
+import BancoDigital.interfaces.Rendimento;
 
 // aplicando conceito de herança
-public class ContaPoupanca extends Conta {
+public class ContaPoupanca extends Conta implements Rendimento {
     // Só quem herda da classe abstrata precisa implementar os métodos abstract.
     // cada tipo de conta implementa esse método de forma diferente
 
@@ -15,6 +16,14 @@ public class ContaPoupanca extends Conta {
     @Override
     public void atualizarSaldo() {
         System.out.println("Saldo conta poupanca: " + getSaldo());
+    }
+
+    @Override // é obrigatório conceitualmente, porque você está sobrescrevendo um método
+    public double calcularRendimento(double valor, int meses) { // regra
+        // juros simples
+        double juros = (valor * 0.05) * meses;
+        double montante = valor + juros;
+        return montante;
     }
 
 }
