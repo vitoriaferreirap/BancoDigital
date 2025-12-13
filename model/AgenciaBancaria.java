@@ -1,9 +1,7 @@
-package BancoDigital.concretas;
+package BancoDigital.model;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import BancoDigital.abstratas.Conta;
 
 //agencia te varias contas
 public class AgenciaBancaria {

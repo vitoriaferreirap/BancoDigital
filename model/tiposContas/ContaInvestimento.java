@@ -1,7 +1,7 @@
-package BancoDigital.concretas.tiposContas;
+package BancoDigital.model.tiposContas;
 
-import BancoDigital.abstratas.Conta;
 import BancoDigital.interfaces.Rendimento;
+import BancoDigital.model.Conta;
 
 public class ContaInvestimento extends Conta implements Rendimento {
 

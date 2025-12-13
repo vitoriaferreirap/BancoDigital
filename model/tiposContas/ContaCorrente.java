@@ -1,6 +1,6 @@
-package BancoDigital.concretas.tiposContas;
+package BancoDigital.model.tiposContas;
 
-import BancoDigital.abstratas.Conta;
+import BancoDigital.model.Conta;
 
 public class ContaCorrente extends Conta {
     // Só quem herda da classe abstrata precisa implementar os métodos abstract.

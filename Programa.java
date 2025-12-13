@@ -1,12 +1,12 @@
 package BancoDigital;
 
-import BancoDigital.abstratas.Conta;
-import BancoDigital.concretas.AgenciaBancaria;
-import BancoDigital.concretas.Banco;
-import BancoDigital.concretas.tiposContas.ContaCorrente;
-import BancoDigital.concretas.tiposContas.ContaInvestimento;
-import BancoDigital.concretas.tiposContas.ContaPoupanca;
 import BancoDigital.interfaces.Rendimento;
+import BancoDigital.model.AgenciaBancaria;
+import BancoDigital.model.Banco;
+import BancoDigital.model.Conta;
+import BancoDigital.model.tiposContas.ContaCorrente;
+import BancoDigital.model.tiposContas.ContaInvestimento;
+import BancoDigital.model.tiposContas.ContaPoupanca;
 
 public class Programa {
     public static void main(String[] args) {
