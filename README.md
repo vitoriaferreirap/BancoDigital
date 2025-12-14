@@ -1,20 +1,25 @@
 # BancoDigital
 
-Projeto em **evolução contínua**, desenvolvido com foco no aprendizado e na aplicação prática de **Java**, iniciando com Java puro e evoluindo gradualmente para uma arquitetura moderna com **Maven, Spring Boot, JPA e PostgreSQL**.
+## Descrição
+
+O **BancoDigital** é um projeto em desenvolvimento que iniciou como uma **aplicação Java de console**, com o objetivo de praticar **Java puro**, estruturas de dados, algoritmos e Programação Orientada a Objetos, **sem o uso de frameworks**.
+
+Após a consolidação dessa base, o projeto entrou em uma nova fase, sendo evoluído para uma **API REST**, com foco em organização, escalabilidade e boas práticas de desenvolvimento.
 
 ---
 
-## Sobre o projeto
+## Objetivos do Projeto
 
-O **BancoDigital** é uma aplicação que simula um sistema bancário, criada inicialmente **sem o uso de frameworks**, com o objetivo de consolidar os fundamentos da **Programação Orientada a Objetos (POO)** antes de avançar para tecnologias mais robustas.
-
-A cada etapa, o projeto vem sendo **refatorado e modernizado**, mantendo o código existente e evoluindo sua arquitetura.
+- Praticar Java puro antes do uso de frameworks
+- Aplicar conceitos de Programação Orientada a Objetos
+- Utilizar estruturas de dados para organizar e manipular informações
+- Implementar regras de negócio do domínio bancário
+- Evoluir a aplicação de **console para API REST**
+- Aplicar boas práticas de arquitetura
 
 ---
 
-## Fase inicial — Java puro
-
-Na primeira etapa do projeto, foram aplicados conceitos fundamentais de POO, incluindo:
+## Conceitos Aplicados (Java Puro)
 
 - Classes abstratas e concretas  
 - Interfaces  
@@ -22,76 +27,52 @@ Na primeira etapa do projeto, foram aplicados conceitos fundamentais de POO, inc
 - Polimorfismo  
 - Encapsulamento  
 
-Além disso, foram implementadas **regras de negócio bancárias**, como:
+### Estruturas de Dados
 
-- Tipos de contas (corrente, poupança, investimento)
-- Cálculo de **juros simples** e **juros compostos**
-- Uso de interfaces para abstração de comportamentos
+- Uso de `List` e `ArrayList` para:
+  - Armazenar contas bancárias
+  - Gerenciar usuários e operações
+  - Percorrer e manipular dados do sistema
 
-Essa fase teve como foco a **base conceitual do Java**, sem dependência de frameworks.
+### Regras de Negócio
 
----
-
-## Evolução do projeto
-
-Com a base consolidada, o projeto entrou em uma nova fase, onde passou por melhorias estruturais e organizacionais:
-
-- Integração  do **Maven** para:
-  - Gerenciamento de dependências
-  - Padronização do build
-- Reorganização e renomeação de pacotes
-- Aplicação da arquitetura **MVC (Model, View, Controller)**
-- Separação clara de responsabilidades entre camadas
+- Implementação de juros simples  
+- Implementação de juros compostos  
+- Uso de interfaces para definição de comportamentos financeiros  
 
 ---
 
-## Fase atual — Spring Boot & persistência
+## Evolução Técnica
 
-Atualmente, o projeto está sendo evoluído para um cenário mais próximo do mercado, com:
-
-- **Spring Boot**
-  - Inicialização e configuração da aplicação
-  - Organização das camadas
-- **Spring Data JPA**
-  - Mapeamento de entidades
-  - Persistência de dados
-- **PostgreSQL**
-  - Banco de dados relacional utilizado no projeto
-
-O foco atual é garantir uma **integração correta entre aplicação e banco de dados**, respeitando boas práticas e organização do código.
+- Aplicação inicial em **console (Java puro)**
+- Adoção do **Maven** para gerenciamento e organização do projeto
+- Reestruturação de pacotes
+- Aplicação do padrão arquitetural **MVC**
+- Criação de uma **API REST com Spring Boot**
+- Integração com **PostgreSQL** utilizando **JPA**
 
 ---
 
-## Próximos passos
-
-- Finalizar a configuração do PostgreSQL
-- Criar e ajustar entidades JPA
-- Implementar repositórios e serviços
-- Criar endpoints REST
-- Evoluir regras de negócio
-- Adicionar validações e tratamento de erros
-- Implementar novas funcionalidades
-
----
-
-## Tecnologias utilizadas
+## Tecnologias Utilizadas
 
 - Java 17  
 - Maven  
 - Spring Boot  
+- Spring Web  
 - Spring Data JPA  
 - PostgreSQL  
-- Git & GitHub  
+- Git e GitHub  
 
 ---
 
-## ▶ Como executar o projeto
+## Como Executar o Projeto
 
 ### Pré-requisitos
+
 - Java 17
 - Maven
-- PostgreSQL
 
 ### Executar a aplicação
+
 ```bash
-mvn clean spring-boot:run
+mvn spring-boot:run
