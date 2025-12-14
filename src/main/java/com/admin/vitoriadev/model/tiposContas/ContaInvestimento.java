@@ -1,7 +1,7 @@
-package BancoDigital.model.tiposContas;
+package com.admin.vitoriadev.model.tiposContas;
 
-import BancoDigital.interfaces.Rendimento;
-import BancoDigital.model.Conta;
+import com.admin.vitoriadev.interfaces.Rendimento;
+import com.admin.vitoriadev.model.Conta;
 
 public class ContaInvestimento extends Conta implements Rendimento {
 

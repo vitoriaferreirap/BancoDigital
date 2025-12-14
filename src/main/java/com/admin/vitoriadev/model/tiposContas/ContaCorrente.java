@@ -1,6 +1,6 @@
-package BancoDigital.model.tiposContas;
+package com.admin.vitoriadev.model.tiposContas;
 
-import BancoDigital.model.Conta;
+import com.admin.vitoriadev.model.Conta;
 
 public class ContaCorrente extends Conta {
     // Só quem herda da classe abstrata precisa implementar os métodos abstract.

@@ -1,4 +1,4 @@
-package BancoDigital.model;
+package com.admin.vitoriadev.model;
 
 import java.util.ArrayList;
 import java.util.List;

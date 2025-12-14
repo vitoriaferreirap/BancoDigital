@@ -1,4 +1,4 @@
-package BancoDigital.interfaces;
+package com.admin.vitoriadev.interfaces;
 
 //tem objetivo de proporcionar que mesmo classes se heranca, tenham comportamentos especificos
 public interface Rendimento {
