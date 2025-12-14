@@ -1,6 +1,6 @@
 # BancoDigital
 
-Projeto em **evolução contínua**, desenvolvido com foco no aprendizado e na aplicação prática de **Java Backend**, iniciando com Java puro e evoluindo gradualmente para uma arquitetura moderna com **Maven, Spring Boot, JPA e PostgreSQL**.
+Projeto em **evolução contínua**, desenvolvido com foco no aprendizado e na aplicação prática de **Java**, iniciando com Java puro e evoluindo gradualmente para uma arquitetura moderna com **Maven, Spring Boot, JPA e PostgreSQL**.
 
 ---
 
