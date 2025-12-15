@@ -1,4 +1,4 @@
-package com.admin.vitoriadev.model;
+package com.admin.vitoriadev.entity;
 
 import java.util.ArrayList;
 import java.util.List;

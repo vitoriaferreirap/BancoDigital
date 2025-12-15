@@ -1,4 +1,4 @@
-package com.admin.vitoriadev.model;
+package com.admin.vitoriadev.entity;
 //Nao é ua lista, classe é um TIPO de obj que vai ser guardado dentro da lista (cada obj tera tudo que ela tera aqui)
 
 //Em POO, quando algo é muito genérico e não faz sentido existir sozinho, ele vira uma classe abstrata.

@@ -1,4 +1,4 @@
-package com.admin.vitoriadev.model.tiposContas;
+package com.admin.vitoriadev.entity.tiposContas;
 
 import com.admin.vitoriadev.interfaces.Rendimento;
 import com.admin.vitoriadev.model.Conta;
