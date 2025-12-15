@@ -3,8 +3,19 @@ package com.admin.vitoriadev.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.annotation.Generated;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 //agencia te varias contas
+@Entity
 public class AgenciaBancaria {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     // aplicando conceito de encapsulamento - ninguel fora da class pode alterar
     private int numero;
     private String nome;

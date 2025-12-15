@@ -1,12 +1,22 @@
 package com.admin.vitoriadev.entity;
 //Nao é ua lista, classe é um TIPO de obj que vai ser guardado dentro da lista (cada obj tera tudo que ela tera aqui)
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 //Em POO, quando algo é muito genérico e não faz sentido existir sozinho, ele vira uma classe abstrata.
-// pode ser polpança/corrente ou outra
+// pode ser poupança/corrente ou outra
 
 // aplicando conceito de abstração - conta individual
+@Entity
 public abstract class Conta {
     // define o que todas as contas têm em comum.
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
     private int numeroConta;
     private double saldo;
     private String titular;
