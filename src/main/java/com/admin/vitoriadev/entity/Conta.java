@@ -5,12 +5,18 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 
 //Em POO, quando algo é muito genérico e não faz sentido existir sozinho, ele vira uma classe abstrata.
 // pode ser poupança/corrente ou outra
 
 // aplicando conceito de abstração - conta individual
 @Entity
+// heranca com spring
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Conta {
     // define o que todas as contas têm em comum.
     @Id
@@ -20,6 +26,11 @@ public abstract class Conta {
     private int numeroConta;
     private double saldo;
     private String titular;
+
+    // conta pertence a UMA agencia
+    @ManyToOne
+    @JoinColumn(name = "agencia_id")
+    private AgenciaBancaria agencia;
 
     public Conta(int numeroConta, double saldo, String titular) {
         this.numeroConta = numeroConta;

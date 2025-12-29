@@ -1,9 +1,14 @@
 package com.admin.vitoriadev.entity.tiposContas;
 
-import com.admin.vitoriadev.interfaces.Rendimento;
-import com.admin.vitoriadev.model.Conta;
+import jakarta.persistence.Entity;
 
+import com.admin.vitoriadev.interfaces.Rendimento;
+import com.admin.vitoriadev.entity.Conta;
+
+@Entity
 public class ContaInvestimento extends Conta implements Rendimento {
+
+    private double totalRendimento;
 
     public ContaInvestimento(int numero, double saldo, String titular) {
         super(numero, saldo, titular);
@@ -16,21 +21,27 @@ public class ContaInvestimento extends Conta implements Rendimento {
     }
 
     @Override
-    public double calcularRendimento(double valor, int meses) {
-        // jutos compostos usando metodo potencia
-        double montanteFinal = valor * Math.pow((1 + 0.05), meses);
-        double montanteInicial = valor;
+    // regra de negocio
+    public double calcularRendimento(int meses) {
+        // saldo inicial mais o juros
+        double montanteFinal = getSaldo() * Math.pow((1 + 0.05), meses);
 
-        System.out.println("-----------------------------------------------");
-        System.out.println("Juros por mes Conta Investimento:");
+        // apenas o juros composto
+        double rendimento = montanteFinal - getSaldo();
 
-        // ver rendimento mensal juros copostos
-        for (int i = 1; i <= meses; i++) {
-            montanteInicial = montanteInicial + montanteInicial * 0.05;
-            System.out.printf("Mes %d rendeu: %.2f\n", i, montanteInicial);
-        }
+        return rendimento;
+    }
 
-        return montanteFinal;
+    // aplica o rendimento calculado e altera o estado da entidade (persistido pelo
+    // JPA)
+    public void aplicarRendimento(double rendimentoCalculado) {
+        this.totalRendimento += rendimentoCalculado;
+        // novo saldo da conta investimento
+        setSaldo(getSaldo() + rendimentoCalculado);
+    }
+
+    public double getTotalRendimento() {
+        return totalRendimento;
     }
 
 }

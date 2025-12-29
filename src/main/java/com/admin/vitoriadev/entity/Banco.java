@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 //conta tem varias agencias
 @Entity
@@ -18,6 +19,7 @@ public class Banco {
     private int numeroBanco;
 
     // colecao de agencias bancarias - 1 banco varias agencias
+    @OneToMany(mappedBy = "banco")
     private List<AgenciaBancaria> agencia = new ArrayList<>();
 
     public Banco(int numeroBanco) {

@@ -3,13 +3,17 @@ package com.admin.vitoriadev.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.annotations.ManyToAny;
+
 import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 
-//agencia te varias contas
 @Entity
 public class AgenciaBancaria {
 
@@ -20,8 +24,17 @@ public class AgenciaBancaria {
     private int numero;
     private String nome;
 
-    // colecao de contas - lista vai arazenar varios obj do tipo conta
+    // colecao de contas - lista vai armazenar varios obj do tipo conta
+    // UMA agencia aponta para varias contas
+    @OneToMany(mappedBy = "agencia") // mapeada pelo atributo agencia da classe Conta
     private List<Conta> contas = new ArrayList<>();
+
+    // Esta agência TEM UMA REFERÊNCIA para um banco EXISTENTE.
+    // MUITAS agências podem apontar para O MESMO banco.
+    // esta agencia pertence a esse banco - ligacao do banco de dados
+    @ManyToOne
+    @JoinColumn(name = "banco_id") // nasce fk
+    private Banco banco;
 
     // construtor padrao
     public AgenciaBancaria(int numero, String nome) {

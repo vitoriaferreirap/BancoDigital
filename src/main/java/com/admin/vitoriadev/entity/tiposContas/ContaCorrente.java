@@ -2,6 +2,9 @@ package com.admin.vitoriadev.entity.tiposContas;
 
 import com.admin.vitoriadev.entity.Conta;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class ContaCorrente extends Conta {
     // Só quem herda da classe abstrata precisa implementar os métodos abstract.
 

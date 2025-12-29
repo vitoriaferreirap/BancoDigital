@@ -5,6 +5,6 @@ public interface Rendimento {
 
     // assinatura - regra, todas devem ser abstratas
     // métodos sem corpo são abstratos implicitamente
-    public abstract double calcularRendimento(double valor, int meses);
+    public abstract double calcularRendimento(int meses);
 
 }
